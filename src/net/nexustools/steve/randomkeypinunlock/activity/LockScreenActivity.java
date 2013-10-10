@@ -22,7 +22,7 @@ public class LockScreenActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
-		getWindow().addFlags(WindowManager.LayoutParams.TYPE_KEYGUARD | WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED | WindowManager.LayoutParams.FLAG_FULLSCREEN | WindowManager.LayoutParams.FLAG_SECURE);
+		getWindow().addFlags(WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED | WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		setContentView(R.layout.activity_lockscreen);
 		layout = (RelativeLayout)findViewById(R.id.randomPINLayout);
 		OnClickListener listener = new OnClickListener() {
@@ -34,7 +34,6 @@ public class LockScreenActivity extends Activity {
 		for(int i = 0; i < layout.getChildCount() - 1; i++)
 			((Button)layout.getChildAt(i)).setOnClickListener(listener);
 		randomizePINButtons();
-		startService(new Intent(this, LockScreenService.class));
 	}
 	
 	public void randomizePINButtons() {
