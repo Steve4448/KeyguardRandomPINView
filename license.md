@@ -1,15 +1,15 @@
-This file is part of LiveTextBackground,
+This file is part of KeyguardRandomPINView,
 
-    LiveTextBackground is free software: you can redistribute it and/or modify
+    KeyguardRandomPINView is free software: you can redistribute it and/or modify
     it under the terms of the GNU Lesser General Public License as published by
     the Free Software Foundation, version 3 or any later version.
 
-    LiveTextBackground is distributed in the hope that it will be useful,
+    KeyguardRandomPINView is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU Lesser General Public License for more details.
 
     You should have received a copy of the GNU Lesser General Public License
-    along with LiveTextBackground.  If not, see <http://www.gnu.org/licenses/>.
+    along with KeyguardRandomPINView.  If not, see <http://www.gnu.org/licenses/>.
     
 Stephen Hohner hereby disclaims all copyright interest in this project.
