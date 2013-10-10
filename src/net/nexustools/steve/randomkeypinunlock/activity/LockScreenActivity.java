@@ -31,9 +31,11 @@ public class LockScreenActivity extends Activity {
 				randomizePINButtons();
             }
 		};
-		for(int i = 0; i < layout.getChildCount() - 1; i++)
+		for(int i = 0; i < layout.getChildCount() - 1; i++) {
 			((Button)layout.getChildAt(i)).setOnClickListener(listener);
+		}
 		randomizePINButtons();
+		startService(new Intent(this, LockScreenService.class));
 	}
 	
 	public void randomizePINButtons() {
