@@ -6,17 +6,19 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.IBinder;
+
 public class LockScreenService extends Service {
 	LockScreenReceiver lSR;
+	
 	@Override
-    public IBinder onBind(Intent intent) {
-	    return null;
-    }
+	public IBinder onBind(Intent intent) {
+		return null;
+	}
 	
 	@SuppressWarnings("deprecation")
 	@Override
 	public void onCreate() {
-		((KeyguardManager)getSystemService(Context.KEYGUARD_SERVICE)).newKeyguardLock("IN").disableKeyguard();
+		((KeyguardManager) getSystemService(Context.KEYGUARD_SERVICE)).newKeyguardLock("IN").disableKeyguard();
 		IntentFilter filter = new IntentFilter();
 		filter.addAction(Intent.ACTION_SCREEN_ON);
 		filter.addAction(Intent.ACTION_SCREEN_OFF);
