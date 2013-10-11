@@ -17,7 +17,8 @@
         android:layout_alignParentRight="true"
         android:ems="10"
         android:inputType="numberSigned"
-        android:text="@string/placeholder_pin_buttons" >
+        android:text="@string/placeholder_pin_buttons"
+        android:focusable="false" >
     </EditText>
 
     <TableLayout

@@ -15,14 +15,16 @@ import android.content.Intent;
 
 public class LockScreenActivity extends Activity {
 	public static final int[] ZERO_TO_NINE = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+	public Button okButton;
 	public Button[] pinButtons;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
-		getWindow().addFlags(WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED | WindowManager.LayoutParams.FLAG_FULLSCREEN);
+		getWindow().addFlags(WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD | WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED | WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		setContentView(R.layout.activity_lockscreen);
+		okButton = (Button)findViewById(R.id.buttonOk);
 		pinButtons = new Button[] {
 				(Button)findViewById(R.id.button0),
 				(Button)findViewById(R.id.button1),
@@ -43,6 +45,13 @@ public class LockScreenActivity extends Activity {
 		};
 		for(Button b : pinButtons)
 			b.setOnClickListener(listener);
+		okButton.setOnClickListener(new OnClickListener() {
+			@Override
+            public void onClick(View v) {
+	            //TODO: Compare/check password validity.
+				finish();
+            }
+		});
 		randomizePINButtons();
 		startService(new Intent(this, LockScreenService.class));
 	}
