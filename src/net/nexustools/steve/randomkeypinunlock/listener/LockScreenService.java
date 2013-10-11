@@ -20,7 +20,7 @@ public class LockScreenService extends Service {
 	public void onCreate() {
 		((KeyguardManager) getSystemService(Context.KEYGUARD_SERVICE)).newKeyguardLock("IN").disableKeyguard();
 		IntentFilter filter = new IntentFilter();
-		filter.addAction(Intent.ACTION_SCREEN_ON);
+		//filter.addAction(Intent.ACTION_SCREEN_ON);
 		filter.addAction(Intent.ACTION_SCREEN_OFF);
 		
 		lSR = new LockScreenReceiver();

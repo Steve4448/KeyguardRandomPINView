@@ -19,6 +19,7 @@ import android.widget.RelativeLayout;
 public class LockScreenActivity extends Activity {
 	public static final int[] ZERO_TO_NINE = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 	
+	public WindowManager winMan;
 	public RelativeLayout wrapperView;
 	public Button okButton;
 	public Button[] pinButtons;
@@ -26,16 +27,17 @@ public class LockScreenActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		
 		WindowManager.LayoutParams params = new WindowManager.LayoutParams(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT, WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD | WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED | WindowManager.LayoutParams.FLAG_FULLSCREEN, PixelFormat.TRANSLUCENT);
 		
-		WindowManager wm = (WindowManager) getApplicationContext().getSystemService(Context.WINDOW_SERVICE);
+		winMan = (WindowManager) getApplicationContext().getSystemService(Context.WINDOW_SERVICE);
 		wrapperView = new RelativeLayout(getBaseContext());
 		getWindow().setAttributes(params);
 		
 		View.inflate(this, R.layout.activity_lockscreen, wrapperView);
-		wm.addView(wrapperView, params);
-		
-		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		winMan.addView(wrapperView, params);
 		okButton = (Button) wrapperView.findViewById(R.id.buttonOk);
 		pinButtons = new Button[] {(Button) wrapperView.findViewById(R.id.button0), (Button) wrapperView.findViewById(R.id.button1), (Button) wrapperView.findViewById(R.id.button2), (Button) wrapperView.findViewById(R.id.button3), (Button) wrapperView.findViewById(R.id.button4), (Button) wrapperView.findViewById(R.id.button5), (Button) wrapperView.findViewById(R.id.button6), (Button) wrapperView.findViewById(R.id.button7), (Button) wrapperView.findViewById(R.id.button8), (Button) wrapperView.findViewById(R.id.button9)};
 		OnClickListener listener = new OnClickListener() {
@@ -54,8 +56,22 @@ public class LockScreenActivity extends Activity {
 			}
 		});
 		randomizePINButtons();
-		startService(new Intent(this, LockScreenService.class));
 	}
+	
+	@Override
+	public void onResume() {
+		randomizePINButtons();
+		startService(new Intent(this, LockScreenService.class));
+		super.onResume();
+	}
+	
+	@Override
+	public void onDestroy() {
+		winMan.removeView(wrapperView);
+		wrapperView.removeAllViews();
+		super.onDestroy();
+	}
+	
 	
 	public void randomizePINButtons() {
 		ArrayList<Integer> numbersToAdd = new ArrayList<Integer>(ZERO_TO_NINE.length);
