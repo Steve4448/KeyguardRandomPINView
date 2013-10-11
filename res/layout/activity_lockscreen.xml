@@ -8,125 +8,145 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".LockScreenActivity" >
 
-    <TextView
-        android:id="@+id/textView1"
+    <EditText
+        android:id="@+id/editText1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/tableLayout1"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:text="@string/placeholder_pin_buttons" />
+        android:layout_alignParentRight="true"
+        android:ems="10"
+        android:inputType="numberSigned"
+        android:text="@string/placeholder_pin_buttons" >
+    </EditText>
 
-    <RelativeLayout
-        android:id="@+id/randomPINLayout"
+    <TableLayout
+        android:id="@+id/tableLayout1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/textView1" >
+        android:layout_alignParentRight="true" >
 
-        <Button
-            android:id="@+id/button9"
+        <TableRow
+            android:id="@+id/tableRow1"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/button10"
-            android:layout_centerHorizontal="true"
-            android:text="@string/placeholder_pin_buttons"
-            android:textSize="24sp" />
+            android:layout_height="wrap_content" >
 
-        <Button
-            android:id="@+id/button1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/button9"
-            android:layout_toLeftOf="@+id/button9"
-            android:text="@string/placeholder_pin_buttons"
-            android:textSize="24sp" />
+            <Button
+                android:id="@+id/button1"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/placeholder_pin_buttons"
+                android:textSize="24sp" />
 
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/button9"
-            android:layout_toRightOf="@+id/button9"
-            android:text="@string/placeholder_pin_buttons"
-            android:textSize="24sp" />
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/placeholder_pin_buttons"
+                android:textSize="24sp" />
 
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/button9"
-            android:layout_alignLeft="@+id/button9"
-            android:text="@string/placeholder_pin_buttons"
-            android:textSize="24sp" />
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/placeholder_pin_buttons"
+                android:textSize="24sp" />
+        </TableRow>
 
-        <Button
-            android:id="@+id/button4"
+        <TableRow
+            android:id="@+id/tableRow2"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/button3"
-            android:layout_alignBottom="@+id/button3"
-            android:layout_alignLeft="@+id/button1"
-            android:text="@string/placeholder_pin_buttons"
-            android:textSize="24sp" />
+            android:layout_height="wrap_content" >
 
-        <Button
-            android:id="@+id/button5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/button3"
-            android:layout_alignBottom="@+id/button3"
-            android:layout_toRightOf="@+id/button9"
-            android:text="@string/placeholder_pin_buttons"
-            android:textSize="24sp" />
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/placeholder_pin_buttons"
+                android:textSize="24sp" />
 
-        <Button
-            android:id="@+id/button6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/button3"
-            android:layout_alignLeft="@+id/button4"
-            android:text="@string/placeholder_pin_buttons"
-            android:textSize="24sp" />
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/placeholder_pin_buttons"
+                android:textSize="24sp" />
 
-        <Button
-            android:id="@+id/button7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/button3"
-            android:layout_alignLeft="@+id/button3"
-            android:text="@string/placeholder_pin_buttons"
-            android:textSize="24sp" />
+            <Button
+                android:id="@+id/button6"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/placeholder_pin_buttons"
+                android:textSize="24sp" />
+        </TableRow>
 
-        <Button
-            android:id="@+id/button8"
+        <TableRow
+            android:id="@+id/tableRow3"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/button7"
-            android:layout_toRightOf="@+id/button3"
-            android:text="@string/placeholder_pin_buttons"
-            android:textSize="24sp" />
+            android:layout_height="wrap_content" >
 
-        <Button
-            android:id="@+id/button10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/button1"
-            android:layout_alignParentBottom="true"
-            android:layout_alignRight="@+id/button9"
-            android:text="@string/placeholder_pin_buttons"
-            android:textSize="24sp" />
+            <Button
+                android:id="@+id/button7"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/placeholder_pin_buttons"
+                android:textSize="24sp" />
 
-        <Button
-            android:id="@+id/button11"
+            <Button
+                android:id="@+id/button8"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/placeholder_pin_buttons"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/button9"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/placeholder_pin_buttons"
+                android:textSize="24sp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow4"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/button2"
-            android:layout_alignParentBottom="true"
-            android:layout_alignRight="@+id/button2"
-            android:layout_alignTop="@+id/button10"
-            android:text="@string/placeholder_pin_buttons_ok" />
-    </RelativeLayout>
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/button0"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/placeholder_pin_buttons"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/buttonOk"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/placeholder_pin_buttons_ok" />
+        </TableRow>
+    </TableLayout>
+
+    <QuickContactBadge
+        android:id="@+id/quickContactBadge1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/editText1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true" />
 
 </RelativeLayout>
