@@ -141,13 +141,20 @@
         </TableRow>
     </TableLayout>
 
-    <QuickContactBadge
-        android:id="@+id/quickContactBadge1"
+    <AnalogClock
+        android:id="@+id/analogClock1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/editText1"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true" />
+
+    <DigitalClock
+        android:id="@+id/digitalClock1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/analogClock1"
+        android:layout_alignRight="@+id/analogClock1"
+        android:layout_below="@+id/analogClock1"
+        android:gravity="center|center_vertical" />
 
 </RelativeLayout>
